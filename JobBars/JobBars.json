@@ -1,12 +1,12 @@
 {
-  "Author": "ocealot",
+  "Author": "ocealot, cyf5119(汉化)",
   "Name": "JobBars",
-  "Punchline": "Extra job gauges",
-  "Description": "Additional job gauges, party buff timers, mitigation trackers, and more. Icon by PAPACHIN",
+  "Punchline": "额外职业量谱",
+  "Description": "额外的职业量谱，小队增益计时器，减伤监控，以及更多。图标来自PAPACHIN\n汉化了绝大多数内容，但仍有几个不明确，待补充。",
   "InternalName": "JobBars",
-  "AssemblyVersion": "1.2.4.2",
+  "AssemblyVersion": "1.2.4.3",
   "Tags": [ "UI", "Bars" ],
-  "RepoUrl": "https://github.com/0ceal0t/JobBars",
+  "RepoUrl": "https://github.com/cyf5119/JobBars",
   "ApplicableVersion": "any",
   "DalamudApiLevel": 9
 }
