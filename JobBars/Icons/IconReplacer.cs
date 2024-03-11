@@ -62,7 +62,7 @@ namespace JobBars.Icons {
 
         public void Draw(string id, JobIds _) {
             var _ID = id + Name;
-            var type = IsTimer ? "TIMER" : "BUFF";
+            var type = IsTimer ? "计时器" : "增益";
             var color = Enabled ? new Vector4(0, 1, 0, 1) : new Vector4(1, 0, 0, 1);
 
             ImGui.PushStyleColor(ImGuiCol.Text, color);
@@ -70,23 +70,23 @@ namespace JobBars.Icons {
                 ImGui.PopStyleColor();
                 ImGui.Indent();
 
-                if (JobBars.Configuration.IconEnabled.Draw($"Enabled{_ID}", Name, Enabled, out var newEnabled)) {
+                if (JobBars.Configuration.IconEnabled.Draw($"启用{_ID}", Name, Enabled, out var newEnabled)) {
                     Enabled = newEnabled;
                     JobBars.IconManager.Reset();
                 }
 
-                if (JobBars.Configuration.IconComboType.Draw($"Dash border{_ID}", Name, ValidComboTypes, ComboType, out var newComboType)) {
+                if (JobBars.Configuration.IconComboType.Draw($"边框闪烁模式{_ID}", Name, ValidComboTypes, ComboType, out var newComboType)) {
                     ComboType = newComboType;
                     CreateIconProps();
                     JobBars.IconManager.Reset();
                 }
 
                 if (IsTimer) {
-                    if (JobBars.Configuration.IconTimerOffset.Draw($"Time offset{_ID}", Name, Offset, out var newOffset)) {
+                    if (JobBars.Configuration.IconTimerOffset.Draw($"时间偏移量{_ID}", Name, Offset, out var newOffset)) {
                         Offset = newOffset;
                     }
 
-                    if (JobBars.Configuration.IconTimerRing.Draw($"Display Ring{_ID}", Name, Enabled, out var newRing)) {
+                    if (JobBars.Configuration.IconTimerRing.Draw($"显示环状倒计时{_ID}", Name, Enabled, out var newRing)) {
                         ShowRing = newRing;
                         CreateIconProps();
                         JobBars.IconManager.Reset();

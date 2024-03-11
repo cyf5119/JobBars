@@ -43,7 +43,7 @@ namespace JobBars.Cursors.Manager {
 
             var viewport = ImGuiHelpers.MainViewport;
 
-            if (JobBars.Configuration.CursorPosition == CursorPositionType.MouseCursor) {
+            if (JobBars.Configuration.CursorPosition == CursorPositionType.跟随鼠标) {
                 var pos = ImGui.GetMousePos() - viewport.Pos;
                 var atkStage = AtkStage.GetSingleton();
 
@@ -60,7 +60,7 @@ namespace JobBars.Cursors.Manager {
             }
             else {
                 JobBars.Builder.ShowCursor();
-                JobBars.Builder.SetCursorPosition(JobBars.Configuration.CursorPosition == CursorPositionType.Middle ? viewport.Size / 2 : JobBars.Configuration.CursorCustomPosition);
+                JobBars.Builder.SetCursorPosition(JobBars.Configuration.CursorPosition == CursorPositionType.屏幕中心 ? viewport.Size / 2 : JobBars.Configuration.CursorCustomPosition);
             }
 
             var inner = CurrentCursor.GetInner();

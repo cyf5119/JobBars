@@ -15,35 +15,35 @@ using System;
 namespace JobBars.Jobs {
     public static class SAM {
         public static GaugeConfig[] Gauges => new GaugeConfig[] {
-            new GaugeStacksConfig(AtkHelper.Localize(BuffIds.Meikyo), GaugeVisualType.Diamond, new GaugeStacksProps {
+            new GaugeStacksConfig(AtkHelper.Localize(BuffIds.Meikyo), GaugeVisualType.菱形, new GaugeStacksProps {
                 MaxStacks = 3,
                 Triggers = new []{
                     new Item(BuffIds.Meikyo)
                 },
                 Color = AtkColor.BlueGreen
             }),
-            new GaugeTimerConfig(AtkHelper.Localize(BuffIds.Fugetsu), GaugeVisualType.Bar, new GaugeSubTimerProps {
+            new GaugeTimerConfig(AtkHelper.Localize(BuffIds.Fugetsu), GaugeVisualType.条状, new GaugeSubTimerProps {
                 MaxDuration = 40,
                 Color = AtkColor.DarkBlue,
                 Triggers = new []{
                     new Item(BuffIds.Fugetsu)
                 }
             }),
-            new GaugeTimerConfig(AtkHelper.Localize(BuffIds.Fuka), GaugeVisualType.Bar, new GaugeSubTimerProps {
+            new GaugeTimerConfig(AtkHelper.Localize(BuffIds.Fuka), GaugeVisualType.条状, new GaugeSubTimerProps {
                 MaxDuration = 40,
                 Color = AtkColor.Red,
                 Triggers = new []{
                     new Item(BuffIds.Fuka)
                 }
             }),
-            new GaugeTimerConfig(AtkHelper.Localize(BuffIds.Higanbana), GaugeVisualType.Bar, new GaugeSubTimerProps {
+            new GaugeTimerConfig(AtkHelper.Localize(BuffIds.Higanbana), GaugeVisualType.条状, new GaugeSubTimerProps {
                 MaxDuration = 60,
                 Color = AtkColor.Orange,
                 Triggers = new []{
                     new Item(BuffIds.Higanbana)
                 }
             }),
-            new GaugeChargesConfig($"{AtkHelper.Localize(ActionIds.TrueNorth)} ({AtkHelper.Localize(JobIds.SAM)})", GaugeVisualType.BarDiamondCombo, new GaugeChargesProps {
+            new GaugeChargesConfig($"{AtkHelper.Localize(ActionIds.TrueNorth)} ({AtkHelper.Localize(JobIds.SAM)})", GaugeVisualType.条状与菱形组合, new GaugeChargesProps {
                 BarColor = AtkColor.NoColor,
                 SameColor = true,
                 Parts = new []{
@@ -63,7 +63,7 @@ namespace JobBars.Jobs {
                         }
                     }
                 },
-                CompletionSound = GaugeCompleteSoundType.Never
+                CompletionSound = GaugeCompleteSoundType.从不
             })
         };
 

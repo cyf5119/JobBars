@@ -14,14 +14,14 @@ using System;
 namespace JobBars.Jobs {
     public static class BLU {
         public static GaugeConfig[] Gauges => new GaugeConfig[] {
-            new GaugeProcsConfig($"{AtkHelper.Localize(JobIds.BLU)} {AtkHelper.ProcText}", GaugeVisualType.Diamond, new GaugeProcProps{
+            new GaugeProcsConfig($"{AtkHelper.Localize(JobIds.BLU)} {AtkHelper.ProcText}", GaugeVisualType.菱形, new GaugeProcProps{
                 Procs = new []{
                     new ProcConfig(AtkHelper.Localize(BuffIds.AstralAttenuation), BuffIds.AstralAttenuation, AtkColor.NoColor),
                     new ProcConfig(AtkHelper.Localize(BuffIds.UmbralAttenuation), BuffIds.UmbralAttenuation, AtkColor.DarkBlue),
                     new ProcConfig(AtkHelper.Localize(BuffIds.PhysicalAttenuation), BuffIds.PhysicalAttenuation, AtkColor.Orange)
                 }
             }),
-            new GaugeTimerConfig(AtkHelper.Localize(BuffIds.BluBleed), GaugeVisualType.Bar, new GaugeSubTimerProps
+            new GaugeTimerConfig(AtkHelper.Localize(BuffIds.BluBleed), GaugeVisualType.条状, new GaugeSubTimerProps
             {
                 MaxDuration = 60,
                 Color = AtkColor.Red,
@@ -29,7 +29,7 @@ namespace JobBars.Jobs {
                     new Item(BuffIds.BluBleed)
                 }
             }),
-            new GaugeTimerConfig(AtkHelper.Localize(BuffIds.Poison), GaugeVisualType.Bar, new GaugeSubTimerProps
+            new GaugeTimerConfig(AtkHelper.Localize(BuffIds.Poison), GaugeVisualType.条状, new GaugeSubTimerProps
             {
                 MaxDuration = 15,
                 Color = AtkColor.HealthGreen,

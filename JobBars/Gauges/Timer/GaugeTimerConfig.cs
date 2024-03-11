@@ -50,7 +50,7 @@ namespace JobBars.Gauges.Timer {
 
         // ===============================
 
-        private static readonly GaugeVisualType[] ValidGaugeVisualType = new[] { GaugeVisualType.Bar, GaugeVisualType.Diamond };
+        private static readonly GaugeVisualType[] ValidGaugeVisualType = new[] { GaugeVisualType.条状, GaugeVisualType.菱形 };
         protected override GaugeVisualType[] GetValidGaugeTypes() => ValidGaugeVisualType;
 
         public GaugeSubTimerConfig[] SubTimers { get; private set; }
@@ -70,27 +70,27 @@ namespace JobBars.Gauges.Timer {
         public override GaugeTracker GetTracker(int idx) => new GaugeTimerTracker(this, idx);
 
         protected override void DrawConfig(string id, ref bool newVisual, ref bool reset) {
-            DrawSoundEffect("Low warning sound effect");
+            DrawSoundEffect("低剩余时间音效");
 
             foreach (var subTimer in SubTimers) {
                 ImGui.SetCursorPosY(ImGui.GetCursorPosY() + 10);
 
                 var suffix = string.IsNullOrEmpty(subTimer.SubName) ? "" : $" ({subTimer.SubName})";
 
-                if (JobBars.Configuration.GaugeColor.Draw($"Color{suffix}{id}", subTimer.Name, subTimer.Color, out var newColor)) {
+                if (JobBars.Configuration.GaugeColor.Draw($"颜色{suffix}{id}", subTimer.Name, subTimer.Color, out var newColor)) {
                     subTimer.Color = newColor;
                     newVisual = true;
                 }
 
-                if (JobBars.Configuration.GaugeTimerOffset.Draw($"Time offset{suffix}{id}", subTimer.Name, subTimer.Offset, out var newOffset)) {
+                if (JobBars.Configuration.GaugeTimerOffset.Draw($"时间偏移量{suffix}{id}", subTimer.Name, subTimer.Offset, out var newOffset)) {
                     subTimer.Offset = newOffset;
                 }
 
-                if (JobBars.Configuration.GaugeInvert.Draw($"Invert{suffix}{id}", subTimer.Name, subTimer.Invert, out var newInvert)) {
+                if (JobBars.Configuration.GaugeInvert.Draw($"逆反填充形式{suffix}{id}", subTimer.Name, subTimer.Invert, out var newInvert)) {
                     subTimer.Invert = newInvert;
                 }
 
-                if (JobBars.Configuration.GaugeLowTimerWarning_2.Draw($"Low warning time{suffix}{id}", subTimer.Name, subTimer.LowWarningTime, out var newLowWarning)) {
+                if (JobBars.Configuration.GaugeLowTimerWarning_2.Draw($"低剩余时间设置{suffix}{id}", subTimer.Name, subTimer.LowWarningTime, out var newLowWarning)) {
                     subTimer.LowWarningTime = newLowWarning;
                 }
             }

@@ -15,14 +15,14 @@ using System;
 namespace JobBars.Jobs {
     public static class WAR {
         public static GaugeConfig[] Gauges => new GaugeConfig[] {
-            new GaugeStacksConfig(AtkHelper.Localize(BuffIds.InnerRelease), GaugeVisualType.Diamond, new GaugeStacksProps {
+            new GaugeStacksConfig(AtkHelper.Localize(BuffIds.InnerRelease), GaugeVisualType.菱形, new GaugeStacksProps {
                 MaxStacks = 3,
                 Triggers = new []{
                     new Item(BuffIds.InnerRelease)
                 },
                 Color = AtkColor.Orange
             }),
-            new GaugeTimerConfig(AtkHelper.Localize(BuffIds.SurgingTempest), GaugeVisualType.Bar, new GaugeSubTimerProps {
+            new GaugeTimerConfig(AtkHelper.Localize(BuffIds.SurgingTempest), GaugeVisualType.条状, new GaugeSubTimerProps {
                 MaxDuration = 60,
                 DefaultDuration = 30,
                 Color = AtkColor.Red,

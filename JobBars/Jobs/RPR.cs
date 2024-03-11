@@ -16,7 +16,7 @@ using System;
 namespace JobBars.Jobs {
     public static class RPR {
         public static GaugeConfig[] Gauges => new GaugeConfig[] {
-            new GaugeStacksConfig(AtkHelper.Localize(BuffIds.SoulReaver), GaugeVisualType.Diamond, new GaugeStacksProps {
+            new GaugeStacksConfig(AtkHelper.Localize(BuffIds.SoulReaver), GaugeVisualType.菱形, new GaugeStacksProps {
                 MaxStacks = 2,
                 Triggers = new []{
                     new Item(BuffIds.SoulReaver),
@@ -24,14 +24,14 @@ namespace JobBars.Jobs {
                 },
                 Color = AtkColor.Red
             }),
-            new GaugeStacksConfig(AtkHelper.Localize(BuffIds.ImmortalSacrifice), GaugeVisualType.Diamond, new GaugeStacksProps {
+            new GaugeStacksConfig(AtkHelper.Localize(BuffIds.ImmortalSacrifice), GaugeVisualType.菱形, new GaugeStacksProps {
                 MaxStacks = 8,
                 Triggers = new []{
                     new Item(BuffIds.ImmortalSacrifice)
                 },
                 Color = AtkColor.PurplePink
             }),
-            new GaugeTimerConfig(AtkHelper.Localize(BuffIds.BloodsownCircle), GaugeVisualType.Bar, new GaugeSubTimerProps {
+            new GaugeTimerConfig(AtkHelper.Localize(BuffIds.BloodsownCircle), GaugeVisualType.条状, new GaugeSubTimerProps {
                 MaxDuration = 6,
                 DefaultDuration = 30,
                 Color = AtkColor.BlueGreen,
@@ -40,7 +40,7 @@ namespace JobBars.Jobs {
                     new Item(BuffIds.BloodsownCircle)
                 }
             }),
-            new GaugeTimerConfig(AtkHelper.Localize(BuffIds.DeathsDesign), GaugeVisualType.Bar, new GaugeSubTimerProps {
+            new GaugeTimerConfig(AtkHelper.Localize(BuffIds.DeathsDesign), GaugeVisualType.条状, new GaugeSubTimerProps {
                 MaxDuration = 60,
                 DefaultDuration = 30,
                 Color = AtkColor.Purple,
@@ -48,7 +48,7 @@ namespace JobBars.Jobs {
                     new Item(BuffIds.DeathsDesign)
                 }
             }),
-            new GaugeChargesConfig($"{AtkHelper.Localize(ActionIds.TrueNorth)} ({AtkHelper.Localize(JobIds.RPR)})", GaugeVisualType.BarDiamondCombo, new GaugeChargesProps {
+            new GaugeChargesConfig($"{AtkHelper.Localize(ActionIds.TrueNorth)} ({AtkHelper.Localize(JobIds.RPR)})", GaugeVisualType.条状与菱形组合, new GaugeChargesProps {
                 BarColor = AtkColor.NoColor,
                 SameColor = true,
                 Parts = new []{
@@ -64,7 +64,7 @@ namespace JobBars.Jobs {
                         Triggers = new []{ new Item(BuffIds.TrueNorth)  }
                     }
                 },
-                CompletionSound = GaugeCompleteSoundType.Never
+                CompletionSound = GaugeCompleteSoundType.从不
             })
         };
 

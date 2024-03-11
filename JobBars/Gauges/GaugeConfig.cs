@@ -43,10 +43,10 @@ namespace JobBars.Gauges {
             var validTypes = GetValidGaugeTypes();
             Type = validTypes.Contains(type) ? type : validTypes[0];
             TypeConfig = Type switch {
-                GaugeVisualType.Bar => new GaugeBarConfig(Name),
-                GaugeVisualType.Diamond => new GaugeDiamondConfig(Name),
-                GaugeVisualType.Arrow => new GaugeArrowConfig(Name),
-                GaugeVisualType.BarDiamondCombo => new GaugeBarDiamondComboConfig(Name),
+                GaugeVisualType.条状 => new GaugeBarConfig(Name),
+                GaugeVisualType.菱形 => new GaugeDiamondConfig(Name),
+                GaugeVisualType.箭头 => new GaugeArrowConfig(Name),
+                GaugeVisualType.条状与菱形组合 => new GaugeBarDiamondComboConfig(Name),
                 _ => null
             };
         }
@@ -54,35 +54,35 @@ namespace JobBars.Gauges {
         public void Draw(string id, out bool newVisual, out bool reset) {
             newVisual = reset = false;
 
-            if (JobBars.Configuration.GaugeEnabled.Draw($"Enabled{id}", Name, Enabled, out var newEnabled)) {
+            if (JobBars.Configuration.GaugeEnabled.Draw($"启用{id}", Name, Enabled, out var newEnabled)) {
                 Enabled = newEnabled;
                 newVisual = true;
             }
 
-            if (JobBars.Configuration.GaugeHideInactive.Draw($"Hide when inactive{id}", Name, HideWhenInactive, out var newHideWhenInactive)) {
+            if (JobBars.Configuration.GaugeHideInactive.Draw($"未激活时隐藏{id}", Name, HideWhenInactive, out var newHideWhenInactive)) {
                 HideWhenInactive = newHideWhenInactive;
             }
 
-            if (JobBars.Configuration.GaugeIndividualScale.Draw($"Scale{id}", Name, out var newScale)) {
+            if (JobBars.Configuration.GaugeIndividualScale.Draw($"缩放比例{id}", Name, out var newScale)) {
                 Scale = Math.Max(0.1f, newScale);
                 newVisual = true;
             }
 
-            if (JobBars.Configuration.GaugePositionType == GaugePositionType.Split) {
-                if (JobBars.Configuration.GaugeSplitPosition.Draw($"Split position{id}", Name, out var newPosition)) {
+            if (JobBars.Configuration.GaugePositionType == GaugePositionType.各个部件分离) {
+                if (JobBars.Configuration.GaugeSplitPosition.Draw($"分离位置{id}", Name, out var newPosition)) {
                     SetSplitPosition(newPosition);
                     newVisual = true;
                 }
             }
 
-            if (JobBars.Configuration.GaugeOrder.Draw($"Order{id}", Name, Order, out var newOrder)) {
+            if (JobBars.Configuration.GaugeOrder.Draw($"序号{id}", Name, Order, out var newOrder)) {
                 Order = newOrder;
                 newVisual = true;
             }
 
             var validTypes = GetValidGaugeTypes();
             if (validTypes.Length > 1) {
-                if (JobBars.Configuration.GaugeType.Draw($"Type{id}", Name, validTypes, Type, out var newType)) {
+                if (JobBars.Configuration.GaugeType.Draw($"形状{id}", Name, validTypes, Type, out var newType)) {
                     SetType(newType);
                     reset = true;
                 }
@@ -93,30 +93,30 @@ namespace JobBars.Gauges {
             DrawConfig(id, ref newVisual, ref reset);
         }
 
-        protected void DrawSoundEffect(string label = "Progress sound effect") {
-            if (ImGui.Button("Test##SoundEffect")) Helper.AtkHelper.PlaySoundEffect(SoundEffect);
+        protected void DrawSoundEffect(string label = "增长音效") {
+            if (ImGui.Button("测试##SoundEffect")) Helper.AtkHelper.PlaySoundEffect(SoundEffect);
             ImGui.SameLine();
 
             ImGui.SetNextItemWidth(200f);
-            if (JobBars.Configuration.GaugeSoundEffect_2.Draw($"{label} (0 = off)", Name, SoundEffect, out var newSoundEffect)) {
+            if (JobBars.Configuration.GaugeSoundEffect_2.Draw($"{label}（设为0以关闭）", Name, SoundEffect, out var newSoundEffect)) {
                 SoundEffect = newSoundEffect;
             }
             ImGui.SameLine();
-            HelpMarker("For macro sound effects, add 36. For example, <se.6> would be 6+36=42");
+            HelpMarker("对于宏的音效，需要加上36。例如，<se.6>需要输入42");
         }
 
         public void PlaySoundEffect() => Helper.AtkHelper.PlaySoundEffect(SoundEffect);
 
         protected void DrawCompletionSoundEffect() {
-            if (ImGui.Button("Test##CompletionSoundEffect")) Helper.AtkHelper.PlaySoundEffect(CompletionSoundEffect);
+            if (ImGui.Button("测试##CompletionSoundEffect")) Helper.AtkHelper.PlaySoundEffect(CompletionSoundEffect);
             ImGui.SameLine();
 
             ImGui.SetNextItemWidth(200f);
-            if (JobBars.Configuration.GaugeCompletionSoundEffect_2.Draw($"Completion sound effect (0 = off)", Name, CompletionSoundEffect, out var newSoundEffect)) {
+            if (JobBars.Configuration.GaugeCompletionSoundEffect_2.Draw($"完成音效（设为0以关闭）", Name, CompletionSoundEffect, out var newSoundEffect)) {
                 CompletionSoundEffect = newSoundEffect;
             }
             ImGui.SameLine();
-            HelpMarker("For macro sound effects, add 36. For example, <se.6> would be 6+36=42");
+            HelpMarker("对于宏的音效，需要加上36。例如，<se.6>需要输入42");
         }
 
         public void PlayCompletionSoundEffect() => Helper.AtkHelper.PlaySoundEffect(CompletionSoundEffect);

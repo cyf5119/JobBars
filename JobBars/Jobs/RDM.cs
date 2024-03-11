@@ -15,13 +15,13 @@ using System;
 namespace JobBars.Jobs {
     public static class RDM {
         public static GaugeConfig[] Gauges => new GaugeConfig[] {
-            new GaugeProcsConfig($"{AtkHelper.Localize(JobIds.RDM)} {AtkHelper.ProcText}", GaugeVisualType.Diamond, new GaugeProcProps{
+            new GaugeProcsConfig($"{AtkHelper.Localize(JobIds.RDM)} {AtkHelper.ProcText}", GaugeVisualType.菱形, new GaugeProcProps{
                 Procs = new []{
                     new ProcConfig(AtkHelper.Localize(BuffIds.VerstoneReady), BuffIds.VerstoneReady, AtkColor.NoColor),
                     new ProcConfig(AtkHelper.Localize(BuffIds.VerfireReady), BuffIds.VerfireReady, AtkColor.Red)
                 }
             }),
-            new GaugeStacksConfig(AtkHelper.Localize(BuffIds.Manafication), GaugeVisualType.Diamond, new GaugeStacksProps {
+            new GaugeStacksConfig(AtkHelper.Localize(BuffIds.Manafication), GaugeVisualType.菱形, new GaugeStacksProps {
                 MaxStacks = 6,
                 Triggers = new []{
                     new Item(BuffIds.Manafication)

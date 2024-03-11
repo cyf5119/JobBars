@@ -38,7 +38,7 @@ namespace JobBars.Gauges.GCD {
                     State = GaugeState.Active;
                     Counter = 0;
 
-                    if (Config.CompletionSound == GaugeCompleteSoundType.When_Empty || Config.CompletionSound == GaugeCompleteSoundType.When_Empty_or_Full)
+                    if (Config.CompletionSound == GaugeCompleteSoundType.当清空时 || Config.CompletionSound == GaugeCompleteSoundType.当充满或清空时)
                         TopConfig.PlayCompletionSoundEffect();
 
                     ret = true;
@@ -50,7 +50,7 @@ namespace JobBars.Gauges.GCD {
                         Counter++;
 
                         TopConfig.PlaySoundEffect();
-                        if (Counter == Config.MaxCounter && (Config.CompletionSound == GaugeCompleteSoundType.When_Full || Config.CompletionSound == GaugeCompleteSoundType.When_Empty_or_Full))
+                        if (Counter == Config.MaxCounter && (Config.CompletionSound == GaugeCompleteSoundType.当充满时 || Config.CompletionSound == GaugeCompleteSoundType.当充满或清空时))
                             TopConfig.PlayCompletionSoundEffect();
                     }
                 }

@@ -48,7 +48,7 @@ namespace JobBars.Gauges.GCD {
 
         // ===========================
 
-        private static readonly GaugeVisualType[] ValidGaugeVisualType = new[] { GaugeVisualType.Bar, GaugeVisualType.Arrow, GaugeVisualType.Diamond };
+        private static readonly GaugeVisualType[] ValidGaugeVisualType = new[] { GaugeVisualType.条状, GaugeVisualType.箭头, GaugeVisualType.菱形 };
         protected override GaugeVisualType[] GetValidGaugeTypes() => ValidGaugeVisualType;
 
         public GaugeSubGCDConfig[] SubGCDs { get; private set; }
@@ -76,27 +76,27 @@ namespace JobBars.Gauges.GCD {
 
                 var suffix = string.IsNullOrEmpty(subGCD.SubName) ? "" : $" ({subGCD.SubName})";
 
-                if (JobBars.Configuration.GaugeColor.Draw($"Color{suffix}{id}", subGCD.Name, subGCD.Color, out var newColor)) {
+                if (JobBars.Configuration.GaugeColor.Draw($"颜色{suffix}{id}", subGCD.Name, subGCD.Color, out var newColor)) {
                     subGCD.Color = newColor;
                     newVisual = true;
                 }
 
-                if (JobBars.Configuration.GaugeMaxGcds.Draw($"Maximum GCDs{suffix}{id}", subGCD.Name, subGCD.MaxCounter, out var newMax)) {
+                if (JobBars.Configuration.GaugeMaxGcds.Draw($"最大GCD数{suffix}{id}", subGCD.Name, subGCD.MaxCounter, out var newMax)) {
                     if (newMax <= 0) newMax = 1;
                     if (newMax > AtkArrow.MAX ) newMax = AtkArrow.MAX;
                     subGCD.MaxCounter = newMax;
                     newVisual = true;
                 }
 
-                if (JobBars.Configuration.GaugeInvert.Draw($"Invert{suffix}{id}", subGCD.Name, subGCD.Invert, out var newInvert)) {
+                if (JobBars.Configuration.GaugeInvert.Draw($"逆反填充形式{suffix}{id}", subGCD.Name, subGCD.Invert, out var newInvert)) {
                     subGCD.Invert = newInvert;
                 }
 
-                if (JobBars.Configuration.GaugeCompletionSound.Draw($"Completion sound{suffix}{id}", subGCD.Name, ValidSoundType, subGCD.CompletionSound, out var newCompletionSound)) {
+                if (JobBars.Configuration.GaugeCompletionSound.Draw($"完成音效触发条件{suffix}{id}", subGCD.Name, ValidSoundType, subGCD.CompletionSound, out var newCompletionSound)) {
                     subGCD.CompletionSound = newCompletionSound;
                 }
 
-                if (JobBars.Configuration.GaugeReverseFill.Draw($"Reverse tick fill order{suffix}{id}", subGCD.Name, subGCD.ReverseFill, out var newReverseFill)) {
+                if (JobBars.Configuration.GaugeReverseFill.Draw($"逆反填充方向{suffix}{id}", subGCD.Name, subGCD.ReverseFill, out var newReverseFill)) {
                     subGCD.ReverseFill = newReverseFill;
                     newVisual = true;
                 }

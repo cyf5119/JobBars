@@ -15,21 +15,21 @@ using System;
 namespace JobBars.Jobs {
     public static class BLM {
         public static GaugeConfig[] Gauges => new GaugeConfig[] {
-            new GaugeProcsConfig($"{AtkHelper.Localize(JobIds.BLM)} {AtkHelper.ProcText}", GaugeVisualType.Diamond, new GaugeProcProps{
+            new GaugeProcsConfig($"{AtkHelper.Localize(JobIds.BLM)} {AtkHelper.ProcText}", GaugeVisualType.菱形, new GaugeProcProps{
                 ShowText = true,
                 Procs = new []{
                     new ProcConfig(AtkHelper.Localize(BuffIds.Firestarter), BuffIds.Firestarter, AtkColor.Orange),
                     new ProcConfig(AtkHelper.Localize(BuffIds.Thundercloud), BuffIds.Thundercloud, AtkColor.LightBlue)
                 }
             }),
-            new GaugeStacksConfig(AtkHelper.Localize(BuffIds.Triplecast), GaugeVisualType.Diamond, new GaugeStacksProps {
+            new GaugeStacksConfig(AtkHelper.Localize(BuffIds.Triplecast), GaugeVisualType.菱形, new GaugeStacksProps {
                 MaxStacks = 3,
                 Triggers = new []{
                     new Item(BuffIds.Triplecast)
                 },
                 Color = AtkColor.MpPink
             }),
-            new GaugeTimerConfig(AtkHelper.Localize(BuffIds.Thunder3), GaugeVisualType.Bar, new GaugeTimerProps {
+            new GaugeTimerConfig(AtkHelper.Localize(BuffIds.Thunder3), GaugeVisualType.条状, new GaugeTimerProps {
                 SubTimers = new[] {
                     new GaugeSubTimerProps {
                         MaxDuration = 30,

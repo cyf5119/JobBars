@@ -91,11 +91,11 @@ namespace JobBars.Gauges.Charges {
 
             if (currentChargesValue != ChargesActiveTotal) {
                 if (currentChargesValue == 0) {
-                    if (Config.CompletionSound == GaugeCompleteSoundType.When_Empty || Config.CompletionSound == GaugeCompleteSoundType.When_Empty_or_Full)
+                    if (Config.CompletionSound == GaugeCompleteSoundType.当清空时 || Config.CompletionSound == GaugeCompleteSoundType.当充满或清空时)
                         Config.PlayCompletionSoundEffect();
                 }
                 else if (currentChargesValue == TotalCharges) {
-                    if (Config.CompletionSound == GaugeCompleteSoundType.When_Full || Config.CompletionSound == GaugeCompleteSoundType.When_Empty_or_Full)
+                    if (Config.CompletionSound == GaugeCompleteSoundType.当充满时 || Config.CompletionSound == GaugeCompleteSoundType.当充满或清空时)
                         Config.PlayCompletionSoundEffect();
                 }
                 else Config.PlaySoundEffect();

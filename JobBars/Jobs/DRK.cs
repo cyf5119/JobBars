@@ -15,19 +15,19 @@ using System;
 namespace JobBars.Jobs {
     public static class DRK {
         public static GaugeConfig[] Gauges => new GaugeConfig[] {
-            new GaugeDrkMPConfig($"MP ({AtkHelper.Localize(JobIds.DRK)})", GaugeVisualType.BarDiamondCombo, new GaugeDrkMpProps {
+            new GaugeDrkMPConfig($"MP ({AtkHelper.Localize(JobIds.DRK)})", GaugeVisualType.条状与菱形组合, new GaugeDrkMpProps {
                 Color = AtkColor.Purple,
                 DarkArtsColor = AtkColor.LightBlue,
                 Segments = new[] { 0.3f, 0.6f, 0.9f }
             }),
-            new GaugeStacksConfig(AtkHelper.Localize(BuffIds.Delirium), GaugeVisualType.Diamond, new GaugeStacksProps {
+            new GaugeStacksConfig(AtkHelper.Localize(BuffIds.Delirium), GaugeVisualType.菱形, new GaugeStacksProps {
                 MaxStacks = 3,
                 Triggers = new []{
                     new Item(BuffIds.Delirium)
                 },
                 Color = AtkColor.Red
             }),
-            new GaugeStacksConfig(AtkHelper.Localize(BuffIds.BloodWeapon), GaugeVisualType.Diamond, new GaugeStacksProps {
+            new GaugeStacksConfig(AtkHelper.Localize(BuffIds.BloodWeapon), GaugeVisualType.菱形, new GaugeStacksProps {
                 MaxStacks = 5,
                 Triggers = new []{
                     new Item(BuffIds.BloodWeapon)

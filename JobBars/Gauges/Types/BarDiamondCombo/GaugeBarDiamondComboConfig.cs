@@ -7,7 +7,7 @@
         }
 
         public override void Draw(string id, ref bool newVisual, ref bool reset) {
-            if (JobBars.Configuration.GaugeShowText.Draw($"Show text{id}", Name, ShowText, out var newShowText)) {
+            if (JobBars.Configuration.GaugeShowText.Draw($"显示文本{id}", Name, ShowText, out var newShowText)) {
                 ShowText = newShowText;
                 newVisual = true;
             }

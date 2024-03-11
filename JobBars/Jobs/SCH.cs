@@ -14,13 +14,13 @@ using System;
 namespace JobBars.Jobs {
     public static class SCH {
         public static GaugeConfig[] Gauges => new GaugeConfig[] {
-            new GaugeProcsConfig(AtkHelper.Localize(BuffIds.Excog), GaugeVisualType.Diamond, new GaugeProcProps{
+            new GaugeProcsConfig(AtkHelper.Localize(BuffIds.Excog), GaugeVisualType.菱形, new GaugeProcProps{
                 Procs = new []{
                     new ProcConfig(AtkHelper.Localize(BuffIds.Excog), BuffIds.Excog, AtkColor.BrightGreen)
                 },
-                ProcSound = GaugeCompleteSoundType.When_Empty
+                ProcSound = GaugeCompleteSoundType.当清空时
             }),
-            new GaugeTimerConfig(AtkHelper.Localize(BuffIds.Biolysis), GaugeVisualType.Bar, new GaugeSubTimerProps {
+            new GaugeTimerConfig(AtkHelper.Localize(BuffIds.Biolysis), GaugeVisualType.条状, new GaugeSubTimerProps {
                 MaxDuration = 30,
                 Color = AtkColor.BlueGreen,
                 Triggers = new []{

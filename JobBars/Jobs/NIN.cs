@@ -15,21 +15,21 @@ using System;
 namespace JobBars.Jobs {
     public static class NIN {
         public static GaugeConfig[] Gauges => new GaugeConfig[] {
-            new GaugeStacksConfig(AtkHelper.Localize(BuffIds.RaijuReady), GaugeVisualType.Diamond, new GaugeStacksProps {
+            new GaugeStacksConfig(AtkHelper.Localize(BuffIds.RaijuReady), GaugeVisualType.菱形, new GaugeStacksProps {
                 MaxStacks = 3,
                 Triggers = new []{
                     new Item(BuffIds.RaijuReady)
                 },
                 Color = AtkColor.PurplePink
             }),
-            new GaugeStacksConfig(AtkHelper.Localize(BuffIds.Bunshin), GaugeVisualType.Diamond, new GaugeStacksProps {
+            new GaugeStacksConfig(AtkHelper.Localize(BuffIds.Bunshin), GaugeVisualType.菱形, new GaugeStacksProps {
                 MaxStacks = 5,
                 Triggers = new []{
                     new Item(BuffIds.Bunshin)
                 },
                 Color = AtkColor.Red
             }),
-            new GaugeChargesConfig($"{AtkHelper.Localize(ActionIds.TrueNorth)} ({AtkHelper.Localize(JobIds.NIN)})", GaugeVisualType.BarDiamondCombo, new GaugeChargesProps {
+            new GaugeChargesConfig($"{AtkHelper.Localize(ActionIds.TrueNorth)} ({AtkHelper.Localize(JobIds.NIN)})", GaugeVisualType.条状与菱形组合, new GaugeChargesProps {
                 BarColor = AtkColor.NoColor,
                 SameColor = true,
                 Parts = new []{
@@ -49,7 +49,7 @@ namespace JobBars.Jobs {
                         }
                     }
                 },
-                CompletionSound = GaugeCompleteSoundType.Never
+                CompletionSound = GaugeCompleteSoundType.从不
             })
         };
 

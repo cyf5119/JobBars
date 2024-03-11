@@ -63,9 +63,9 @@ namespace JobBars.Gauges.Procs {
 
                 if (procActive) procActiveCount++;
                 if (procActive != proc.Active) {
-                    if (procActive && (Config.ProcSound == GaugeCompleteSoundType.When_Full || Config.ProcSound == GaugeCompleteSoundType.When_Empty_or_Full))
+                    if (procActive && (Config.ProcSound == GaugeCompleteSoundType.当充满时 || Config.ProcSound == GaugeCompleteSoundType.当充满或清空时))
                         playSound = true;
-                    else if (!procActive && (Config.ProcSound == GaugeCompleteSoundType.When_Empty || Config.ProcSound == GaugeCompleteSoundType.When_Empty_or_Full))
+                    else if (!procActive && (Config.ProcSound == GaugeCompleteSoundType.当清空时 || Config.ProcSound == GaugeCompleteSoundType.当充满或清空时))
                         playSound = true;
                 }
                 proc.Active = procActive;

@@ -14,12 +14,12 @@ using System;
 namespace JobBars.Jobs {
     public static class AST {
         public static GaugeConfig[] Gauges => new GaugeConfig[] {
-            new GaugeProcsConfig($"{AtkHelper.Localize(JobIds.AST)} {AtkHelper.ProcText}", GaugeVisualType.Diamond, new GaugeProcProps {
+            new GaugeProcsConfig($"{AtkHelper.Localize(JobIds.AST)} {AtkHelper.ProcText}", GaugeVisualType.菱形, new GaugeProcProps {
                 Procs = new []{
                     new ProcConfig(AtkHelper.Localize(BuffIds.GiantDominance), BuffIds.GiantDominance, AtkColor.LightBlue)
                 }
             }),
-            new GaugeTimerConfig(AtkHelper.Localize(BuffIds.Combust3), GaugeVisualType.Bar, new GaugeTimerProps {
+            new GaugeTimerConfig(AtkHelper.Localize(BuffIds.Combust3), GaugeVisualType.条状, new GaugeTimerProps {
                 SubTimers = new [] {
                     new GaugeSubTimerProps {
                         MaxDuration = 30,

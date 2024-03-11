@@ -16,12 +16,12 @@ using System;
 namespace JobBars.Jobs {
     public static class SMN {
         public static GaugeConfig[] Gauges => new GaugeConfig[] {
-            new GaugeProcsConfig(AtkHelper.Localize(BuffIds.FurtherRuin), GaugeVisualType.Diamond, new GaugeProcProps{
+            new GaugeProcsConfig(AtkHelper.Localize(BuffIds.FurtherRuin), GaugeVisualType.菱形, new GaugeProcProps{
                 Procs = new []{
                     new ProcConfig(AtkHelper.Localize(BuffIds.FurtherRuin), BuffIds.FurtherRuin, AtkColor.DarkBlue)
                 }
             }),
-            new GaugeGCDConfig(AtkHelper.Localize(ActionIds.SummonBahamut), GaugeVisualType.Arrow, new GaugeGCDProps {
+            new GaugeGCDConfig(AtkHelper.Localize(ActionIds.SummonBahamut), GaugeVisualType.箭头, new GaugeGCDProps {
                 SubGCDs = new [] {
                     new GaugeSubGCDProps {
                         MaxCounter = 6,

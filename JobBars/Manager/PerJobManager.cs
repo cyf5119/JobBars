@@ -16,10 +16,10 @@ namespace JobBars.Data {
 
         protected override void DrawRightColumn() {
             if (SelectedJob == JobIds.OTHER) {
-                ImGui.Text("Select a job...");
+                ImGui.Text("选择一个职业...");
             }
             else {
-                ImGui.BeginChild(Id + "Selected");
+                ImGui.BeginChild(Id + "已选择");
                 DrawItem(JobToValue[SelectedJob], SelectedJob);
                 ImGui.EndChild();
             }

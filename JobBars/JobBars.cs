@@ -44,8 +44,8 @@ namespace JobBars {
         private static bool RecreateUi => Dalamud.Condition[ConditionFlag.CreatingCharacter]; // getting haircut, etc.
         private bool LoggedOut = true;
 
-        public static AttachAddon AttachAddon { get; private set; } = AttachAddon.Chatbox;
-        public static AttachAddon CooldownAttachAddon { get; private set; } = AttachAddon.PartyList;
+        public static AttachAddon AttachAddon { get; private set; } = AttachAddon.聊天窗;
+        public static AttachAddon CooldownAttachAddon { get; private set; } = AttachAddon.小队列表;
 
         private bool IsLoaded = false;
 
@@ -226,7 +226,7 @@ namespace JobBars {
 
         private void SetupCommands() {
             Dalamud.CommandManager.AddHandler("/jobbars", new CommandInfo(OnCommand) {
-                HelpMessage = $"Open config window for {Name}",
+                HelpMessage = $"打开{Name}设置窗口",
                 ShowInHelp = true
             });
         }

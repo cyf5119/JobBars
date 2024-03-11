@@ -2,7 +2,7 @@
 
 namespace JobBars.Gauges.MP {
     public class GaugeMPConfig : GaugeConfig {
-        private static readonly GaugeVisualType[] ValidGaugeVisualType = new[] { GaugeVisualType.Bar };
+        private static readonly GaugeVisualType[] ValidGaugeVisualType = new[] { GaugeVisualType.条状 };
         protected override GaugeVisualType[] GetValidGaugeTypes() => ValidGaugeVisualType;
 
         public float[] Segments { get; private set; }
@@ -21,13 +21,13 @@ namespace JobBars.Gauges.MP {
 
         protected override void DrawConfig(string id, ref bool newVisual, ref bool reset) {
             if (Segments != null) {
-                if (JobBars.Configuration.GaugeShowSegments.Draw($"Show segments{id}", Name, ShowSegments, out var newShowSegments)) {
+                if (JobBars.Configuration.GaugeShowSegments.Draw($"分段显示{id}", Name, ShowSegments, out var newShowSegments)) {
                     ShowSegments = newShowSegments;
                     reset = true;
                 }
             }
 
-            if (JobBars.Configuration.GaugeColor.Draw($"Color{id}", Name, Color, out var newColor)) {
+            if (JobBars.Configuration.GaugeColor.Draw($"颜色{id}", Name, Color, out var newColor)) {
                 Color = newColor;
                 newVisual = true;
             }

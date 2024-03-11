@@ -9,7 +9,7 @@ namespace JobBars.Gauges.Custom {
     }
 
     public class GaugeDrkMPConfig : GaugeMPConfig {
-        private static readonly GaugeVisualType[] ValidGaugeVisualType = new[] { GaugeVisualType.Bar, GaugeVisualType.BarDiamondCombo, GaugeVisualType.Diamond, GaugeVisualType.Arrow };
+        private static readonly GaugeVisualType[] ValidGaugeVisualType = new[] { GaugeVisualType.条状, GaugeVisualType.条状与菱形组合, GaugeVisualType.菱形, GaugeVisualType.箭头 };
         protected override GaugeVisualType[] GetValidGaugeTypes() => ValidGaugeVisualType;
 
         public ElementColor DarkArtsColor { get; private set; }
@@ -25,7 +25,7 @@ namespace JobBars.Gauges.Custom {
         protected override void DrawConfig(string id, ref bool newVisual, ref bool reset) {
             base.DrawConfig(id, ref newVisual, ref reset);
 
-            if (JobBars.Configuration.GaugeColor.Draw($"Dark Arts color{id}", Name, Color, out var newDarkArtsColor)) {
+            if (JobBars.Configuration.GaugeColor.Draw($"暗技颜色{id}", Name, Color, out var newDarkArtsColor)) {
                 DarkArtsColor = newDarkArtsColor;
                 newVisual = true;
             }

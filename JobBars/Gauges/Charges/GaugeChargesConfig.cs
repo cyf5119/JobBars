@@ -20,7 +20,7 @@ namespace JobBars.Gauges.Charges {
     }
 
     public class GaugeChargesConfig : GaugeConfig {
-        private static readonly GaugeVisualType[] ValidGaugeVisualType = new[] { GaugeVisualType.BarDiamondCombo, GaugeVisualType.Bar, GaugeVisualType.Diamond };
+        private static readonly GaugeVisualType[] ValidGaugeVisualType = new[] { GaugeVisualType.条状与菱形组合, GaugeVisualType.条状, GaugeVisualType.菱形 };
         protected override GaugeVisualType[] GetValidGaugeTypes() => ValidGaugeVisualType;
 
         public GaugesChargesPartProps[] Parts { get; private set; }
@@ -40,19 +40,19 @@ namespace JobBars.Gauges.Charges {
         public override GaugeTracker GetTracker(int idx) => new GaugeChargesTracker(this, idx);
 
         protected override void DrawConfig(string id, ref bool newVisual, ref bool reset) {
-            if (JobBars.Configuration.GaugeColor.Draw($"Color{id}", Name, BarColor, out var newColor)) {
+            if (JobBars.Configuration.GaugeColor.Draw($"颜色{id}", Name, BarColor, out var newColor)) {
                 BarColor = newColor;
                 newVisual = true;
             }
 
-            if (JobBars.Configuration.GaugeCompletionSound.Draw($"Completion sound{id}", Name, ValidSoundType, CompletionSound, out var newCompletionSound)) {
+            if (JobBars.Configuration.GaugeCompletionSound.Draw($"完成音效{id}", Name, ValidSoundType, CompletionSound, out var newCompletionSound)) {
                 CompletionSound = newCompletionSound;
             }
 
             DrawCompletionSoundEffect();
             DrawSoundEffect();
 
-            if (JobBars.Configuration.GaugeReverseFill.Draw($"Reverse tick fill order{id}", Name, ReverseFill, out var newReverseFill)) {
+            if (JobBars.Configuration.GaugeReverseFill.Draw($"逆反填充方向{id}", Name, ReverseFill, out var newReverseFill)) {
                 ReverseFill = newReverseFill;
                 newVisual = true;
             }

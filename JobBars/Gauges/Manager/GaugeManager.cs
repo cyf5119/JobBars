@@ -57,12 +57,12 @@ namespace JobBars.Gauges.Manager {
         private Vector2 GetPerJobPosition() => JobBars.Configuration.GaugePerJobPosition.Get($"{CurrentJob}");
 
         public void UpdatePositionScale() {
-            JobBars.Builder.SetGaugePosition(JobBars.Configuration.GaugePositionType == GaugePositionType.PerJob ? GetPerJobPosition() : JobBars.Configuration.GaugePositionGlobal);
+            JobBars.Builder.SetGaugePosition(JobBars.Configuration.GaugePositionType == GaugePositionType.该职业单独 ? GetPerJobPosition() : JobBars.Configuration.GaugePositionGlobal);
             JobBars.Builder.SetGaugeScale(JobBars.Configuration.GaugeScale);
 
             var position = 0;
             foreach (var gauge in CurrentGauges.OrderBy(g => g.Order).Where(g => g.Enabled)) {
-                if (JobBars.Configuration.GaugePositionType == GaugePositionType.Split) {
+                if (JobBars.Configuration.GaugePositionType == GaugePositionType.各个部件分离) {
                     gauge.UpdateSplitPosition();
                 }
                 else {

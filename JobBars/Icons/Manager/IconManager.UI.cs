@@ -4,14 +4,14 @@ using JobBars.Data;
 namespace JobBars.Icons.Manager {
     public partial class IconManager {
         private readonly InfoBox<IconManager> LargeIconInfoBox = new() {
-            Label = "Large Text",
+            Label = "使用大号字体",
             ContentsAction = (IconManager manager) => {
-                if (ImGui.Checkbox("Buff icons" + manager.Id, ref JobBars.Configuration.IconBuffLarge)) {
+                if (ImGui.Checkbox("增益类技能图标" + manager.Id, ref JobBars.Configuration.IconBuffLarge)) {
                     JobBars.IconBuilder.RefreshVisuals();
                     JobBars.Configuration.Save();
                 }
 
-                if (ImGui.Checkbox("Timer icons" + manager.Id, ref JobBars.Configuration.IconTimerLarge)) {
+                if (ImGui.Checkbox("计时器技能图标" + manager.Id, ref JobBars.Configuration.IconTimerLarge)) {
                     JobBars.IconBuilder.RefreshVisuals();
                     JobBars.Configuration.Save();
                 }
@@ -19,7 +19,7 @@ namespace JobBars.Icons.Manager {
         };
 
         protected override void DrawHeader() {
-            if (ImGui.Checkbox("Icon replacement enabled", ref JobBars.Configuration.IconsEnabled)) {
+            if (ImGui.Checkbox("启用图标替换", ref JobBars.Configuration.IconsEnabled)) {
                 JobBars.Configuration.Save();
                 Reset();
             }

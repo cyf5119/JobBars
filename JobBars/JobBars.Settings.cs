@@ -13,27 +13,29 @@ namespace JobBars {
         public static readonly Vector4 GREEN_COLOR = new(0.36078431373f, 0.72156862745f, 0.36078431373f, 1.0f);
 
         private readonly InfoBox<JobBars> RequiresRestartInfoBox = new() {
-            Label = "Requires Restart",
+            Label = "这些设置需要重启以应用",
             ContentsAction = (JobBars item) => {
-                if (ImGui.Checkbox("Use 4K textures##JobBars_Settings", ref Configuration.Use4K)) {
+                if (ImGui.Checkbox("使用4K纹理##JobBars_Settings", ref Configuration.Use4K)) {
                     Configuration.Save();
                 }
 
                 ImGui.SetNextItemWidth(200f);
-                if (DrawCombo(ValidAttachTypes, Configuration.AttachAddon, "Gauge/Buff/Cursor UI element", "##JobBars_Settings", out var newAttach)) {
+                if (DrawCombo(ValidAttachTypes, Configuration.AttachAddon, "量普/增益/光标 所依附的界面", "##JobBars_Settings", out var newAttach)) {
                     Configuration.AttachAddon = newAttach;
                     Configuration.Save();
                 }
 
                 ImGui.SetNextItemWidth(200f);
-                if (DrawCombo(ValidAttachTypes, Configuration.CooldownAttachAddon, "Cooldown UI element", "##JobBars_Settings", out var newCDAttach)) {
+                if (DrawCombo(ValidAttachTypes, Configuration.CooldownAttachAddon, "冷却时间 所依附的界面", "##JobBars_Settings", out var newCDAttach)) {
                     Configuration.CooldownAttachAddon = newCDAttach;
                     Configuration.Save();
                 }
             }
         };
 
-        private static readonly string Text = "Choosing UI elements will not work with plugins which hide them (such as Chat2 for Chatbox, DelvUI for PartyList). Also, when selecting PartyList for gauges, make sure to have \"Hide party list when solo\" turned off in Character Configuation > UI Settings > Party List.";
+        private static readonly string Text = "当所依附的界面被其他插件隐藏时（例如Chat2隐藏聊天窗，DelvUI隐藏小队列表）组件也会被一同隐藏。\n" +
+                                              "同样的，当选择依附小队列表时，请确保关闭\n" +
+                                              "角色设置>界面设置>小队列表 中的“未加入队伍时不显示小队列表”。";
 
         protected static void DisplayWarning() {
             ImGui.PushStyleColor(ImGuiCol.Border, new Vector4(1, 0, 0, 0.3f));
@@ -60,7 +62,7 @@ namespace JobBars {
 
             string _ID = "##JobBars_Settings";
             ImGui.SetNextWindowSize(new Vector2(600, 1000), ImGuiCond.FirstUseEver);
-            if (ImGui.Begin("JobBars Settings", ref Visible)) {
+            if (ImGui.Begin("JobBars 设置", ref Visible)) {
                 RequiresRestartInfoBox.Draw(this);
 
                 DisplayWarning();
@@ -70,27 +72,27 @@ namespace JobBars {
                 // ==========================
 
                 ImGui.BeginTabBar("Tabs" + _ID);
-                if (ImGui.BeginTabItem("Gauges" + _ID)) {
+                if (ImGui.BeginTabItem("量普" + _ID)) {
                     GaugeManager?.Draw();
                     ImGui.EndTabItem();
                 }
 
-                if (ImGui.BeginTabItem("Icons" + _ID)) {
+                if (ImGui.BeginTabItem("图标" + _ID)) {
                     IconManager?.Draw();
                     ImGui.EndTabItem();
                 }
 
-                if (ImGui.BeginTabItem("Buffs" + _ID)) {
+                if (ImGui.BeginTabItem("增益" + _ID)) {
                     BuffManager?.Draw();
                     ImGui.EndTabItem();
                 }
 
-                if (ImGui.BeginTabItem("Cooldowns" + _ID)) {
+                if (ImGui.BeginTabItem("冷却时间" + _ID)) {
                     CooldownManager?.Draw();
                     ImGui.EndTabItem();
                 }
 
-                if (ImGui.BeginTabItem("Cursor" + _ID)) {
+                if (ImGui.BeginTabItem("光标" + _ID)) {
                     CursorManager?.Draw();
                     ImGui.EndTabItem();
                 }

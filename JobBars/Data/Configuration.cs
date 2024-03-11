@@ -12,21 +12,21 @@ using System.Numerics;
 
 namespace JobBars.Data {
     public enum GaugePositionType {
-        Global,
-        PerJob,
-        Split
+        全局通用,
+        该职业单独,
+        各个部件分离
     }
 
     public enum CursorPositionType {
-        MouseCursor,
-        Middle,
-        CustomPosition
+        跟随鼠标,
+        屏幕中心,
+        自定义位置
     }
 
     public enum AttachAddon {
-        Chatbox,
-        HP_MP_Bars,
-        PartyList
+        聊天窗,
+        体力魔力条,
+        小队列表
     }
 
     public struct CustomCooldownProps {
@@ -44,9 +44,9 @@ namespace JobBars.Data {
 
         public bool Use4K = true;
 
-        public AttachAddon AttachAddon = AttachAddon.Chatbox;
+        public AttachAddon AttachAddon = AttachAddon.聊天窗;
 
-        public AttachAddon CooldownAttachAddon = AttachAddon.PartyList;
+        public AttachAddon CooldownAttachAddon = AttachAddon.小队列表;
 
         // ====== GAUGES ======
 
@@ -60,7 +60,7 @@ namespace JobBars.Data {
         public bool GaugesHideWeaponSheathed = false;
         public bool GaugeGCDTextVisible = true;
 
-        public GaugePositionType GaugePositionType = GaugePositionType.Global;
+        public GaugePositionType GaugePositionType = GaugePositionType.全局通用;
         public Vector2 GaugePositionGlobal = new( 200, 200 ); // global
         public VectorValueConfig GaugePerJobPosition = new( new Vector2( 200, 200 ) ); // per job
         public VectorValueConfig GaugeSplitPosition = new( new Vector2( 200, 200 ) ); // split
@@ -148,7 +148,7 @@ namespace JobBars.Data {
         public bool CursorHideWhenHeld = false;
         public bool CursorHideWeaponSheathed = false;
         public bool CursorHideOutOfCombat = false;
-        public CursorPositionType CursorPosition = CursorPositionType.MouseCursor;
+        public CursorPositionType CursorPosition = CursorPositionType.跟随鼠标;
         public Vector2 CursorCustomPosition = new( 200, 200 );
         public float CursorInnerScale = 1.5f;
         public float CursorOuterScale = 1.2f;

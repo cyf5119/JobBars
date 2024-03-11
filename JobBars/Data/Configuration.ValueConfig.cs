@@ -121,7 +121,7 @@ namespace JobBars.Data {
             if (ImGui.BeginCombo(id, $"{currentValue}", ImGuiComboFlags.HeightLargest)) {
                 if (ShowSearch) {
                     ImGui.SetNextItemWidth(ImGui.GetWindowContentRegionMax().X - ImGui.GetWindowContentRegionMin().X - 50);
-                    ImGui.InputText("Search##Combo", ref SearchInput, 256);
+                    ImGui.InputText("搜索##Combo", ref SearchInput, 256);
                 }
 
                 if (ShowSearch) ImGui.BeginChild("Child##Combo", new Vector2(ImGui.GetWindowContentRegionMax().X - ImGui.GetWindowContentRegionMin().X, 200), true);

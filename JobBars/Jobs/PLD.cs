@@ -16,27 +16,27 @@ using System;
 namespace JobBars.Jobs {
     public static class PLD {
         public static GaugeConfig[] Gauges => new GaugeConfig[] {
-            new GaugeProcsConfig(AtkHelper.Localize(BuffIds.DivineMight), GaugeVisualType.Diamond, new GaugeProcProps{
+            new GaugeProcsConfig(AtkHelper.Localize(BuffIds.DivineMight), GaugeVisualType.菱形, new GaugeProcProps{
                 ShowText = true,
                 Procs = new []{
                     new ProcConfig(AtkHelper.Localize(BuffIds.DivineMight), BuffIds.DivineMight, AtkColor.DarkBlue)
                 }
             }),
-            new GaugeStacksConfig(AtkHelper.Localize(BuffIds.Requiescat), GaugeVisualType.Diamond, new GaugeStacksProps {
+            new GaugeStacksConfig(AtkHelper.Localize(BuffIds.Requiescat), GaugeVisualType.菱形, new GaugeStacksProps {
                 MaxStacks = 4,
                 Triggers = new []{
                     new Item(BuffIds.Requiescat)
                 },
                 Color = AtkColor.LightBlue
             }),
-            new GaugeStacksConfig(AtkHelper.Localize(BuffIds.SwordOath), GaugeVisualType.Diamond, new GaugeStacksProps {
+            new GaugeStacksConfig(AtkHelper.Localize(BuffIds.SwordOath), GaugeVisualType.菱形, new GaugeStacksProps {
                 MaxStacks = 3,
                 Triggers = new []{
                     new Item(BuffIds.SwordOath)
                 },
                 Color = AtkColor.BlueGreen
             }),
-            new GaugeGCDConfig(AtkHelper.Localize(BuffIds.FightOrFlight), GaugeVisualType.Bar, new GaugeSubGCDProps {
+            new GaugeGCDConfig(AtkHelper.Localize(BuffIds.FightOrFlight), GaugeVisualType.条状, new GaugeSubGCDProps {
                 MaxCounter = 8,
                 MaxDuration = 20,
                 Color = AtkColor.Red,

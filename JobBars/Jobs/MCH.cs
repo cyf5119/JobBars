@@ -15,14 +15,14 @@ using System;
 namespace JobBars.Jobs {
     public static class MCH {
         public static GaugeConfig[] Gauges => new GaugeConfig[] {
-            new GaugeStacksConfig(AtkHelper.Localize(BuffIds.Overheated), GaugeVisualType.Diamond, new GaugeStacksProps {
+            new GaugeStacksConfig(AtkHelper.Localize(BuffIds.Overheated), GaugeVisualType.菱形, new GaugeStacksProps {
                 MaxStacks = 5,
                 Triggers = new[] {
                     new Item(BuffIds.Overheated)
                 },
                 Color = AtkColor.Orange,
             }),
-            new GaugeGCDConfig(AtkHelper.Localize(BuffIds.Wildfire), GaugeVisualType.Arrow, new GaugeSubGCDProps {
+            new GaugeGCDConfig(AtkHelper.Localize(BuffIds.Wildfire), GaugeVisualType.箭头, new GaugeSubGCDProps {
                 MaxCounter = 6,
                 MaxDuration = 10,
                 Color = AtkColor.Red,
@@ -30,7 +30,7 @@ namespace JobBars.Jobs {
                     new Item(BuffIds.Wildfire)
                 }
             }),
-            new GaugeChargesConfig(AtkHelper.Localize(ActionIds.GaussRound), GaugeVisualType.BarDiamondCombo, new GaugeChargesProps {
+            new GaugeChargesConfig(AtkHelper.Localize(ActionIds.GaussRound), GaugeVisualType.条状与菱形组合, new GaugeChargesProps {
                 BarColor = AtkColor.Red,
                 SameColor = true,
                 Parts = new []{
@@ -43,7 +43,7 @@ namespace JobBars.Jobs {
                     }
                 }
             }),
-            new GaugeChargesConfig(AtkHelper.Localize(ActionIds.Ricochet), GaugeVisualType.BarDiamondCombo, new GaugeChargesProps {
+            new GaugeChargesConfig(AtkHelper.Localize(ActionIds.Ricochet), GaugeVisualType.条状与菱形组合, new GaugeChargesProps {
                 BarColor = AtkColor.LightBlue,
                 SameColor = true,
                 Parts = new []{

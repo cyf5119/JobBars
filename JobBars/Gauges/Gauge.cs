@@ -3,10 +3,10 @@ using System.Numerics;
 
 namespace JobBars.Gauges {
     public enum GaugeVisualType {
-        Bar,
-        Arrow,
-        Diamond,
-        BarDiamondCombo
+        条状,
+        箭头,
+        菱形,
+        条状与菱形组合
     }
 
     public enum GaugeState {
@@ -16,10 +16,10 @@ namespace JobBars.Gauges {
     }
 
     public enum GaugeCompleteSoundType {
-        When_Full,
-        When_Empty,
-        When_Empty_or_Full,
-        Never
+        当充满时,
+        当清空时,
+        当充满或清空时,
+        从不
     }
 
     public abstract class Gauge {

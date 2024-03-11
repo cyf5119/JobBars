@@ -44,9 +44,9 @@ namespace JobBars.Helper {
         public static AtkUnitBase* CooldownAttachAddon => GetAddon(JobBars.CooldownAttachAddon);
 
         public static AtkUnitBase* GetAddon(Data.AttachAddon addon) => addon switch {
-            Data.AttachAddon.Chatbox => ChatLogAddon,
-            Data.AttachAddon.HP_MP_Bars => ParameterAddon,
-            Data.AttachAddon.PartyList => (AtkUnitBase*)PartyListAddon,
+            Data.AttachAddon.聊天窗 => ChatLogAddon,
+            Data.AttachAddon.体力魔力条 => ParameterAddon,
+            Data.AttachAddon.小队列表 => (AtkUnitBase*)PartyListAddon,
             _ => null
         };
     }

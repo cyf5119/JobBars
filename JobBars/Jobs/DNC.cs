@@ -13,7 +13,7 @@ using System;
 namespace JobBars.Jobs {
     public static class DNC {
         public static GaugeConfig[] Gauges => new GaugeConfig[] {
-            new GaugeProcsConfig($"{AtkHelper.Localize(JobIds.DNC)} {AtkHelper.ProcText}", GaugeVisualType.Diamond, new GaugeProcProps{
+            new GaugeProcsConfig($"{AtkHelper.Localize(JobIds.DNC)} {AtkHelper.ProcText}", GaugeVisualType.菱形, new GaugeProcProps{
                 Procs = new []{
                     new ProcConfig(AtkHelper.Localize(BuffIds.FlourishingSymmetry),
                         new[] { new Item(BuffIds.FlourishingSymmetry), new Item(BuffIds.SilkenSymmetry) },

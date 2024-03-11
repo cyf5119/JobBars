@@ -14,7 +14,7 @@ using System;
 namespace JobBars.Jobs {
     public static class SGE {
         public static GaugeConfig[] Gauges => new GaugeConfig[] {
-            new GaugeTimerConfig(AtkHelper.Localize(BuffIds.EukrasianDosis), GaugeVisualType.Bar, new GaugeSubTimerProps {
+            new GaugeTimerConfig(AtkHelper.Localize(BuffIds.EukrasianDosis), GaugeVisualType.条状, new GaugeSubTimerProps {
                 MaxDuration = 30,
                 Color = AtkColor.MpPink,
                 Triggers = new []{

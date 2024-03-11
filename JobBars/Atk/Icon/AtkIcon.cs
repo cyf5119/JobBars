@@ -6,11 +6,12 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace JobBars.Atk {
     public enum UIIconComboType {
-        Combo_Or_Active,
-        Combo_And_Active,
-        Only_When_Combo,
-        Only_When_Active,
-        Never
+        Combo_Or_Active, // 连击或需要时
+        Combo_And_Active, // 连击且需要时
+        Only_When_Combo, // 仅在连击时
+        Only_When_Active, // 仅在需要时
+        Never // 从不
+        // 还没搞懂，不太确定，先不动
     }
 
     public struct UIIconProps {

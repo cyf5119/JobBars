@@ -16,12 +16,12 @@ using System;
 namespace JobBars.Jobs {
     public static class BRD {
         public static GaugeConfig[] Gauges => new GaugeConfig[] {
-            new GaugeProcsConfig(AtkHelper.Localize(BuffIds.StraightShotReady), GaugeVisualType.Diamond, new GaugeProcProps {
+            new GaugeProcsConfig(AtkHelper.Localize(BuffIds.StraightShotReady), GaugeVisualType.菱形, new GaugeProcProps {
                 Procs = new []{
                     new ProcConfig(AtkHelper.Localize(BuffIds.StraightShotReady), BuffIds.StraightShotReady, AtkColor.Yellow)
                 }
             }),
-            new GaugeChargesConfig(AtkHelper.Localize(ActionIds.BloodLetter), GaugeVisualType.BarDiamondCombo, new GaugeChargesProps {
+            new GaugeChargesConfig(AtkHelper.Localize(ActionIds.BloodLetter), GaugeVisualType.条状与菱形组合, new GaugeChargesProps {
                 BarColor = AtkColor.Red,
                 SameColor = true,
                 Parts = new []{
@@ -34,7 +34,7 @@ namespace JobBars.Jobs {
                     }
                 }
             }),
-            new GaugeTimerConfig(AtkHelper.Localize(BuffIds.VenomousBite), GaugeVisualType.Bar, new GaugeSubTimerProps {
+            new GaugeTimerConfig(AtkHelper.Localize(BuffIds.VenomousBite), GaugeVisualType.条状, new GaugeSubTimerProps {
                 MaxDuration = 45,
                 Color = AtkColor.Purple,
                 Triggers = new []{
@@ -42,7 +42,7 @@ namespace JobBars.Jobs {
                     new Item(BuffIds.VenomousBite)
                 }
             }),
-            new GaugeTimerConfig(AtkHelper.Localize(BuffIds.Stormbite), GaugeVisualType.Bar, new GaugeSubTimerProps {
+            new GaugeTimerConfig(AtkHelper.Localize(BuffIds.Stormbite), GaugeVisualType.条状, new GaugeSubTimerProps {
                 MaxDuration = 45,
                 Color = AtkColor.LightBlue,
                 Triggers = new []{
@@ -50,7 +50,7 @@ namespace JobBars.Jobs {
                     new Item(BuffIds.Stormbite),
                 }
             }),
-            new GaugeGCDConfig(AtkHelper.Localize(BuffIds.RagingStrikes), GaugeVisualType.Arrow, new GaugeSubGCDProps {
+            new GaugeGCDConfig(AtkHelper.Localize(BuffIds.RagingStrikes), GaugeVisualType.箭头, new GaugeSubGCDProps {
                 MaxCounter = 8,
                 MaxDuration = 20,
                 Color = AtkColor.Orange,

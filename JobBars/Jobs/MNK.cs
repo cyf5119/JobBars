@@ -17,34 +17,34 @@ using System;
 namespace JobBars.Jobs {
     public static class MNK {
         public static GaugeConfig[] Gauges => new GaugeConfig[] {
-            new GaugeStacksConfig(AtkHelper.Localize(BuffIds.PerfectBalance), GaugeVisualType.Diamond, new GaugeStacksProps {
+            new GaugeStacksConfig(AtkHelper.Localize(BuffIds.PerfectBalance), GaugeVisualType.菱形, new GaugeStacksProps {
                 MaxStacks = 3,
                 Triggers = new []{
                     new Item(BuffIds.PerfectBalance)
                 },
                 Color = AtkColor.Orange
             }),
-            new GaugeProcsConfig(AtkHelper.Localize(BuffIds.LeadenFist), GaugeVisualType.Diamond, new GaugeProcProps{
+            new GaugeProcsConfig(AtkHelper.Localize(BuffIds.LeadenFist), GaugeVisualType.菱形, new GaugeProcProps{
                 Procs = new []{
                     new ProcConfig(AtkHelper.Localize(BuffIds.LeadenFist), BuffIds.LeadenFist, AtkColor.Yellow)
                 },
-                ProcSound = GaugeCompleteSoundType.Never
+                ProcSound = GaugeCompleteSoundType.从不
             }),
-            new GaugeTimerConfig(AtkHelper.Localize(BuffIds.DisciplinedFist), GaugeVisualType.Bar, new GaugeSubTimerProps {
+            new GaugeTimerConfig(AtkHelper.Localize(BuffIds.DisciplinedFist), GaugeVisualType.条状, new GaugeSubTimerProps {
                 MaxDuration = 15,
                 Color = AtkColor.PurplePink,
                 Triggers = new []{
                     new Item(BuffIds.DisciplinedFist)
                 }
             }),
-            new GaugeTimerConfig(AtkHelper.Localize(BuffIds.Demolish), GaugeVisualType.Bar, new GaugeSubTimerProps {
+            new GaugeTimerConfig(AtkHelper.Localize(BuffIds.Demolish), GaugeVisualType.条状, new GaugeSubTimerProps {
                 MaxDuration = 18,
                 Color = AtkColor.Yellow,
                 Triggers = new [] {
                     new Item(BuffIds.Demolish)
                 }
             }),
-            new GaugeGCDConfig(AtkHelper.Localize(BuffIds.RiddleOfFire), GaugeVisualType.Bar, new GaugeSubGCDProps {
+            new GaugeGCDConfig(AtkHelper.Localize(BuffIds.RiddleOfFire), GaugeVisualType.条状, new GaugeSubGCDProps {
                 MaxCounter = 11,
                 MaxDuration = 20,
                 Color = AtkColor.Red,
@@ -52,7 +52,7 @@ namespace JobBars.Jobs {
                     new Item(BuffIds.RiddleOfFire)
                 }
             }),
-            new GaugeChargesConfig($"{AtkHelper.Localize(ActionIds.TrueNorth)} ({AtkHelper.Localize(JobIds.MNK)})", GaugeVisualType.BarDiamondCombo, new GaugeChargesProps {
+            new GaugeChargesConfig($"{AtkHelper.Localize(ActionIds.TrueNorth)} ({AtkHelper.Localize(JobIds.MNK)})", GaugeVisualType.条状与菱形组合, new GaugeChargesProps {
                 BarColor = AtkColor.NoColor,
                 SameColor = true,
                 Parts = new []{
@@ -68,7 +68,7 @@ namespace JobBars.Jobs {
                         Triggers = new []{ new Item(BuffIds.TrueNorth) }
                     }
                 },
-                CompletionSound = GaugeCompleteSoundType.Never
+                CompletionSound = GaugeCompleteSoundType.从不
             })
         };
 

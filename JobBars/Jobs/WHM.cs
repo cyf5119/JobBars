@@ -14,7 +14,7 @@ using System;
 namespace JobBars.Jobs {
     public static class WHM {
         public static GaugeConfig[] Gauges => new GaugeConfig[] {
-            new GaugeTimerConfig(AtkHelper.Localize(BuffIds.Dia), GaugeVisualType.Bar, new GaugeTimerProps {
+            new GaugeTimerConfig(AtkHelper.Localize(BuffIds.Dia), GaugeVisualType.条状, new GaugeTimerProps {
                 SubTimers = new [] {
                     new GaugeSubTimerProps {
                         MaxDuration = 30,
@@ -28,7 +28,7 @@ namespace JobBars.Jobs {
                     }
                 }
             }),
-            new GaugeStacksConfig(AtkHelper.Localize(BuffIds.LilyBell), GaugeVisualType.Diamond, new GaugeStacksProps {
+            new GaugeStacksConfig(AtkHelper.Localize(BuffIds.LilyBell), GaugeVisualType.菱形, new GaugeStacksProps {
                 MaxStacks = 5,
                 Triggers = new []{
                     new Item(BuffIds.LilyBell)

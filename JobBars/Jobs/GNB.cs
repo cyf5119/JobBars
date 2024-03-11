@@ -14,7 +14,7 @@ using System;
 namespace JobBars.Jobs {
     public static class GNB {
         public static GaugeConfig[] Gauges => new GaugeConfig[] {
-            new GaugeGCDConfig(AtkHelper.Localize(BuffIds.NoMercy), GaugeVisualType.Arrow, new GaugeSubGCDProps {
+            new GaugeGCDConfig(AtkHelper.Localize(BuffIds.NoMercy), GaugeVisualType.箭头, new GaugeSubGCDProps {
                 MaxCounter = 9,
                 MaxDuration = 20,
                 Color = AtkColor.Orange,

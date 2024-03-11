@@ -15,7 +15,7 @@ using System;
 namespace JobBars.Jobs {
     public static class DRG {
         public static GaugeConfig[] Gauges => new GaugeConfig[] {
-            new GaugeGCDConfig(AtkHelper.Localize(BuffIds.LanceCharge), GaugeVisualType.Arrow, new GaugeSubGCDProps {
+            new GaugeGCDConfig(AtkHelper.Localize(BuffIds.LanceCharge), GaugeVisualType.箭头, new GaugeSubGCDProps {
                 MaxCounter = 8,
                 MaxDuration = 20,
                 Color = AtkColor.Red,
@@ -23,7 +23,7 @@ namespace JobBars.Jobs {
                     new Item(BuffIds.LanceCharge)
                 }
             }),
-            new GaugeGCDConfig(AtkHelper.Localize(BuffIds.RightEye), GaugeVisualType.Arrow, new GaugeSubGCDProps {
+            new GaugeGCDConfig(AtkHelper.Localize(BuffIds.RightEye), GaugeVisualType.箭头, new GaugeSubGCDProps {
                 MaxCounter = 8,
                 MaxDuration = 20,
                 Color = AtkColor.Orange,
@@ -32,7 +32,7 @@ namespace JobBars.Jobs {
                     new Item(BuffIds.RightEye2)
                 }
             }),
-            new GaugeTimerConfig(AtkHelper.Localize(BuffIds.ChaoticSpring), GaugeVisualType.Bar, new GaugeSubTimerProps {
+            new GaugeTimerConfig(AtkHelper.Localize(BuffIds.ChaoticSpring), GaugeVisualType.条状, new GaugeSubTimerProps {
                 MaxDuration = 24,
                 Color = AtkColor.Purple,
                 Triggers = new [] {
@@ -40,7 +40,7 @@ namespace JobBars.Jobs {
                     new Item(BuffIds.ChaoticSpring)
                 }
             }),
-            new GaugeChargesConfig($"{AtkHelper.Localize(ActionIds.TrueNorth)} ({AtkHelper.Localize(JobIds.DRG)})", GaugeVisualType.BarDiamondCombo, new GaugeChargesProps {
+            new GaugeChargesConfig($"{AtkHelper.Localize(ActionIds.TrueNorth)} ({AtkHelper.Localize(JobIds.DRG)})", GaugeVisualType.条状与菱形组合, new GaugeChargesProps {
                 BarColor = AtkColor.NoColor,
                 SameColor = true,
                 Parts = new []{
@@ -60,7 +60,7 @@ namespace JobBars.Jobs {
                         }
                     }
                 },
-                CompletionSound = GaugeCompleteSoundType.Never
+                CompletionSound = GaugeCompleteSoundType.从不
             })
         };
 
